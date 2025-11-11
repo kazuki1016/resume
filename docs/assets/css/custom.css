@@ -1,0 +1,201 @@
+/* ハンバーガーメニューボタン */
+.hamburger-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  background: #159957;
+  background: linear-gradient(120deg, #155799, #159957);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* サイドバーナビゲーション */
+.sidebar-nav {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 320px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 1002;
+  overflow-y: auto;
+  transition: right 0.3s ease;
+  padding: 20px;
+}
+
+.sidebar-nav.active {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #159957;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  color: #159957;
+  font-size: 1.5rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #606c71;
+  line-height: 1;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #159957;
+}
+
+/* ナビゲーションリスト */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list > li {
+  margin-bottom: 8px;
+}
+
+.nav-list a {
+  display: block;
+  padding: 10px 12px;
+  color: #606c71;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.nav-list a:hover {
+  background: #f5f5f5;
+  color: #159957;
+  padding-left: 16px;
+}
+
+.nav-list ul {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.nav-list ul li {
+  margin-bottom: 4px;
+}
+
+.nav-list ul a {
+  font-size: 0.85rem;
+  color: #7a7a7a;
+}
+
+.nav-list ul a:hover {
+  color: #159957;
+}
+
+/* オーバーレイ */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* メインコンテンツの調整 */
+.main-content {
+  position: relative;
+}
+
+/* スクロールバーのスタイル（Webkit系ブラウザ） */
+.sidebar-nav::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: #159957;
+  border-radius: 4px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb:hover {
+  background: #155799;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+  .sidebar-nav {
+    width: 80%;
+    right: -80%;
+  }
+  
+  .hamburger-menu {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .hamburger-menu span {
+    width: 22px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar-nav {
+    width: 90%;
+    right: -90%;
+  }
+}
