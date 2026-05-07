@@ -29,7 +29,7 @@ body {
   max-width: 1080px;
   margin: 0 auto 2.5rem;
   background: var(--surface);
-  border-radius: 20px;
+  border-radius: 0;
   box-shadow: var(--shadow);
   border: 1px solid rgba(31, 111, 182, 0.08);
   position: relative;
@@ -319,8 +319,8 @@ body {
 /* レスポンシブ対応 */
 @media screen and (max-width: 768px) {
   .main-content > .main-content {
-    margin-top: -16px;
-    border-radius: 14px;
+    margin-top: 0;
+    border-radius: 0;
   }
 
   .sidebar-nav {
@@ -340,8 +340,8 @@ body {
 
 @media screen and (max-width: 480px) {
   .main-content > .main-content {
-    margin-top: -12px;
-    border-radius: 10px;
+    margin-top: 0;
+    border-radius: 0;
   }
 
   .main-content h2 {
