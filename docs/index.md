@@ -18,7 +18,7 @@
 
 ## 保有スキル
 - Webアプリケーションの設計・開発・運用（フロントエンド、バックエンド、AWS、Azure）
-- AI駆動開発の基盤構築（カスタムinstructionファイル）
+- 主にGitHub Copilotを使用したAI駆動開発の基盤構築（カスタムinstructionファイル、エージェント）
 
 ---
 
@@ -36,7 +36,7 @@
 
 ### フレームワーク・ライブラリ
 - Bootstrap（2.0年）
-- Laravel（2.5年）
+- Laravel（4.0年）
 - Vue（2.0年）
 - React（1.5年）
 - Apollo GraphQL（1.0年）
