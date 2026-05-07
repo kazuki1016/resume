@@ -350,13 +350,14 @@ body {
   .main-content {
     margin-left: 260px;
     max-width: 100%;
+    padding: 0 !important;
   }
 
   /* テーマのmax-width/margin: autoを解除して全幅に */
   main.main-content {
     max-width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 !important;
   }
 }
 
