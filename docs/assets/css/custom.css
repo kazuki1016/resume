@@ -138,6 +138,11 @@ body {
   color: var(--muted);
 }
 
+.project-name,
+.project-tagline {
+  color: #ffffff;
+}
+
 /* ハンバーガーメニューボタン */
 .hamburger-menu {
   position: fixed;
