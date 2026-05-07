@@ -349,6 +349,13 @@ body {
   /* ヘッダー・メインをサイドバー分右にずらす */
   .main-content {
     margin-left: 260px;
+    max-width: 100%;
+  }
+
+  /* テーマのmax-width/margin: autoを解除して全幅に */
+  main.main-content {
+    max-width: 100%;
+    margin: 0;
   }
 }
 
