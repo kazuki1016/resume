@@ -321,7 +321,38 @@ body {
   background: #155799;
 }
 
-/* レスポンシブ対応 */
+/* タブレット・PC: 左サイドバー常時表示 */
+@media screen and (min-width: 769px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  .overlay {
+    display: none !important;
+  }
+
+  .close-btn {
+    display: none;
+  }
+
+  .sidebar-nav {
+    position: fixed;
+    left: 0;
+    right: auto;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+    border-right: 1px solid var(--line);
+  }
+
+  /* ヘッダー・メインをサイドバー分右にずらす */
+  .main-content {
+    margin-left: 260px;
+  }
+}
+
+/* スマホ: ハンバーガーメニュー */
 @media screen and (max-width: 768px) {
   .main-content > .main-content {
     margin-top: 0;
