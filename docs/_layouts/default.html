@@ -24,7 +24,6 @@
         <button class="close-btn" id="close-sidebar" aria-label="閉じる">&times;</button>
       </div>
       <ul class="nav-list">
-        <li><a href="#職務経歴書">職務経歴書</a></li>
         <li><a href="#基本情報">基本情報</a></li>
         <li><a href="#資格">資格</a></li>
         <li><a href="#保有スキル">保有スキル</a></li>
@@ -54,6 +53,11 @@
           <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
         {% endif %}
       </header>
+
+      <!-- セクションインジケーター -->
+      <div class="section-indicator" id="section-indicator">
+        <span id="section-indicator-text"></span>
+      </div>
 
       <main id="content" class="main-content" role="main">
         {{ content }}
@@ -96,6 +100,29 @@
           closeSidebar();
         }
       });
+
+      // セクションインジケーター
+      const indicator = document.getElementById('section-indicator');
+      const indicatorText = document.getElementById('section-indicator-text');
+      const sections = document.querySelectorAll('main h2, main h3');
+
+      function updateIndicator() {
+        let current = null;
+        sections.forEach(section => {
+          if (section.getBoundingClientRect().top <= 60) {
+            current = section;
+          }
+        });
+        if (current) {
+          indicatorText.textContent = current.textContent;
+          indicator.classList.add('visible');
+        } else {
+          indicator.classList.remove('visible');
+        }
+      }
+
+      window.addEventListener('scroll', updateIndicator, { passive: true });
+      updateIndicator();
     </script>
   </body>
 </html>

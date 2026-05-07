@@ -137,6 +137,39 @@ body {
   color: var(--muted);
 }
 
+/* セクションインジケーター */
+.section-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background: rgba(21, 87, 153, 0.92);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.45rem 1.2rem;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.section-indicator.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (min-width: 769px) {
+  .section-indicator {
+    left: 260px;
+  }
+}
+
 .page-header .project-name,
 .page-header .project-tagline {
   color: #ffffff;
