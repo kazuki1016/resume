@@ -109,6 +109,19 @@
       const indicatorText = document.getElementById('section-indicator-text');
       const sections = document.querySelectorAll('main h2, main h3');
 
+      // 案件情報（期間・役割・人数）を改行表示に整える
+      function formatProjectMetaLines() {
+        const paragraphs = document.querySelectorAll('main p');
+        paragraphs.forEach((p) => {
+          const html = p.innerHTML;
+          if (!html.includes('<strong>期間</strong>:')) return;
+
+          p.innerHTML = html
+            .replace(/\s*<strong>役割<\/strong>:/g, '<br><strong>役割</strong>:')
+            .replace(/\s*<strong>人数<\/strong>:/g, '<br><strong>人数</strong>:');
+        });
+      }
+
       function updateIndicator() {
         let current = null;
         sections.forEach(section => {
@@ -125,6 +138,7 @@
       }
 
       window.addEventListener('scroll', updateIndicator, { passive: true });
+      formatProjectMetaLines();
       updateIndicator();
     </script>
   </body>
